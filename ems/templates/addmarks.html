@@ -1,0 +1,244 @@
+{% extends 'layout.html' %}
+
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='/root.js') }}">
+{% endblock %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block body %}
+    <div class="container d-flex justify-content-between align-items-center pt-5 pb-5">
+        <h2 class="sidebar-title"> Dashboard / Add Marks </h2>
+
+        <a href="{{ url_for('dashboard') }}" class="text-end btn btn-info">
+            <i class='bx bx-chevron-left-circle'></i>
+            Go Dashboard
+        </a>
+    </div>
+
+
+    <div class="container col-md-10 table-container">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+
+            <!-- row 1 -->
+            <div class="row">
+
+                <div class="form-group pb-3 col-sm-3">
+                    {{ form.roll_id.label(class="form-control-label") }}
+                    {% if form.roll_id.errors %}
+                        {{ form.roll_id(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.roll_id.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.roll_id(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group pb-3 col-sm-3">
+                    {{ form.classname.label(class="form-control-label") }}
+                    {% if form.classname.errors %}
+                        {{ form.classname(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.classname.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.classname(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+
+                <div class="form-group pb-3 col-sm-6">
+                    {{ form.name.label(class="form-control-label") }}
+                    {% if form.name.errors %}
+                        {{ form.name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.name(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <!-- row 2 -->
+            <div class="row">
+
+                <div class="form-group pb-3 col-sm-3">
+                    {{ form.bengali.label(class="form-control-label") }}
+                    {% if form.bengali.errors %}
+                        {{ form.bengali(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.bengali.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.bengali(class="form-control form-control-lg", id="ban") }}
+                    {% endif %}
+                </div>
+
+
+                <div class="form-group pb-3 col-sm-3">
+                    {{ form.bengali2.label(class="form-control-label") }}
+                    {% if form.bengali2.errors %}
+                        {{ form.bengali2(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.bengali2.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.bengali2(class="form-control form-control-lg", id="ban2") }}
+                    {% endif %}
+                </div>
+
+
+                <div class="form-group pb-3 col-sm-3">
+                    {{ form.english.label(class="form-control-label") }}
+                    {% if form.english.errors %}
+                        {{ form.english(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.english.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.english(class="form-control form-control-lg", id="eng") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group pb-3 col-sm-3">
+                    {{ form.english2.label(class="form-control-label") }}
+                    {% if form.english2.errors %}
+                        {{ form.english2(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.english2.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.english2(class="form-control form-control-lg", id="eng2") }}
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <!-- row 3 -->
+            <div class="row">
+
+                <div class="form-group pb-3 col-sm-3">
+                    {{ form.mathematics.label(class="form-control-label") }}
+                    {% if form.mathematics.errors %}
+                        {{ form.mathematics(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.mathematics.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.mathematics(class="form-control form-control-lg", id="math") }}
+                    {% endif %}
+                </div>
+
+
+                <div class="form-group pb-3 col-sm-3">
+                    {{ form.science.label(class="form-control-label") }}
+                    {% if form.science.errors %}
+                        {{ form.science(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.science.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.science(class="form-control form-control-lg", id="sci") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group pb-3 col-sm-3">
+                    {{ form.bandg.label(class="form-control-label") }}
+                    {% if form.bandg.errors %}
+                        {{ form.bandg(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.bandg.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.bandg(class="form-control form-control-lg", id="bandg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group pb-3 col-sm-3">
+                    {{ form.religion.label(class="form-control-label") }}
+                    {% if form.religion.errors %}
+                        {{ form.religion(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.religion.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.religion(class="form-control form-control-lg", id="reli") }}
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <div class="total">
+                <div class="pb-3 pt-3">
+                    {{ form.total.label(class="form-control-label") }}
+                    {{ form.total(class="form-control form-control-lg", id="total", disabled="", readonly="") }}
+                </div>
+
+                {{ form.submit(class="btn btn-lg btn-info btn-end") }}
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        const ban = document.getElementById('ban'),
+            ban2 = document.getElementById('ban2'),
+            eng = document.getElementById('eng'),
+            eng2 = document.getElementById('eng2'),
+            math = document.getElementById('math'),
+            sci = document.getElementById('sci'),
+            bandg = document.getElementById('bandg'),
+            rel = document.getElementById('rel'),
+            total = document.getElementById('total');
+
+        rel.addEventListener('keyup', (totalvalue)=> {
+            if (ban&&ban2&&eng&&eng2&&math&&sci&&bandg&&rel !== null) {
+                alert(1);
+                checktotal();
+            }
+            console.log(totalvalue);
+            total.innerHTML = banvalue;
+        });
+
+        function checktotal() {
+            banvalue = ban.value.trim();
+            ban2value = ban2.value.trim();
+            engvalue = eng.value.trim();
+            eng2value = eng2.value.trim();
+            mathvalue = math.value.trim();
+            scivalue = sci.value.trim();
+            bandgvalue = bandg.value.trim();
+            relvalue = rel.value.trim();
+
+            totalvalue = banvalue + ban2value + engvalue + eng2value + mathvalue + scivalue + bandgvalue + relvalue;
+
+            return totalvalue;
+        }
+    </script>
+{% endblock %}

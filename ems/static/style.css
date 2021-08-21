@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Round&display=swap');
+
+:root {
+    --dark-little: #f1f2f6;
+    --purple-dark: #5352ed;
+    --purple-light: #2C3DF4;
+}
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    background: var(--dark-little) !important;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Nova Round', cursive;
+    margin-bottom: 1.5rem;
+}
+
+input[type='text'],
+input[type='password'] {
+    font-size: 1rem !important;
+    border: 1px solid transparent;
+}
+
+input:hover,
+input:focus {
+    outline: none;
+}
+
+.login,
+.callout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.login form {
+    min-width: 20rem;
+    padding: 2rem 1rem;
+    /*box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;*/
+}
+
+.btn-info {
+    color: #fff !important;
+    background: var(--purple-dark) !important;
+}
+
+.btn-block-info {
+    background: var(--purple-dark) !important;
+    color: #fff !important;
+    width: 100%;
+}
+
+.btn-lg {
+    padding: 0.5rem 4rem !important;
+    font-size: 1rem !important;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.table {
+    color: #fff !important;
+    background: var(--purple-dark);
+}
+
+.table thead th {
+    border: none;
+    white-space: nowrap;
+    padding: 20px 30px;
+    font-size: 14px;
+    background: var(--purple-light);
+    border-bottom: 4px solid #f2f2f2 !important;
+}
+
+.table tbody th, .table tbody td {
+    border: none;
+    padding: 20px 30px;
+    border-bottom: 3px solid #2b3035;
+    font-size: 14px;
+}
+
+.table>:not(:last-child)>:last-child>* {
+    border-bottom-color: var(--dark-little) !important;
+}
+
+.table-hover>tbody>tr:hover {
+    color: #fff !important;
+}
+
+.table tbody th, .table tbody td {
+    border-bottom: 3px solid #f2f2f2;
+}
+
+.bx-chevron-left-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 576px){
+    .login form {
+        min-width: 25rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+
+}
